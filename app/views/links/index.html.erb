@@ -1,0 +1,22 @@
+<ul>
+  <div class="profile-image">
+    <%= image_tag 'profile.jpg', alt: 'My Profile Picture' %>
+  </div>
+
+  <div class="introduction">
+    <h2>Greetings! I'm Blake Ridgway</h2>
+    <p>
+      <strong>Systems & Network Administrator | Linux & Open Source Advocate | Ultra-Endurance Cyclist</strong>
+    </p>
+  </div>
+
+  <% @links.each do |link| %>
+    <li>
+      <%= link_to link.title, link.url.start_with?('http') ? link.url : 'http://' + link.url, target: '_blank', class: 'center-links' %>
+      <p><%= link.description %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Link', new_link_path, class: 'new-link-button' %>
+
