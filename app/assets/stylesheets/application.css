@@ -18,7 +18,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #52616a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -30,7 +30,7 @@
 }
 
 .new-link-button:hover {
-    background-color: #0056b3;
+    background-color: #1e2022;
 }
 
 .center-links {
@@ -52,7 +52,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #c9d6de;
     color: #333;
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ li:hover {
 
 a {
     text-decoration: none;
-    color: #007bff;
+    color: #52616a;
     font-weight: bold;
 }
 
@@ -98,7 +98,7 @@ a:hover {
 
 .link-button {
     display: block;
-    background-color: #007bff;
+    background-color: #52616a;
     color: white;
     padding: 15px;
     border-radius: 8px;
@@ -108,7 +108,7 @@ a:hover {
 }
 
 .link-button:hover {
-    background-color: #0056b3;
+    background-color: #1e2022;
     text-decoration: underline;
 }
 
@@ -134,7 +134,7 @@ a:hover {
 }
 
 .btn {
-    background-color: #007bff;
+    background-color: #52616a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -144,5 +144,5 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #1e2022;
 }
