@@ -10,13 +10,17 @@
     </p>
   </div>
 
-  <% @links.each do |link| %>
-    <li>
-      <%= link_to link.title, link.url.start_with?('http') ? link.url : 'http://' + link.url, target: '_blank', class: 'center-links' %>
-      <p><%= link.description %></p>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @links.each do |link| %>
+      <li>
+        <%= link_to (link.url.start_with?('http') ? link.url : 'http://' + link.url), target: '_blank', class: 'link-button' do %>
+          <strong><%= link.title %></strong>
+          <p><%= link.description %></p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
 
 <%= link_to 'New Link', new_link_path, class: 'new-link-button' %>
 
