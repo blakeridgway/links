@@ -13,7 +13,8 @@
   <ul>
     <% @links.each do |link| %>
       <li>
-        <%= link_to (link.url.start_with?('http') ? link.url : 'http://' + link.url), target: '_blank', class: 'link-button' do %>
+          <% safe_url = URI.parse(Link.new.url).scheme ? Link.new.url : "http://#{Link.new.url}" %>
+          <%= link_to safe_url, safe_url, target: "_blank", class: "link-button" %>
           <strong><%= link.title %></strong>
           <p><%= link.description %></p>
         <% end %>
