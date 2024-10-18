@@ -13,14 +13,11 @@
   <ul>
     <% @links.each do |link| %>
       <li>
-        <%= link_to (link.url.start_with?('http') ? link.url : 'http://' + link.url), target: '_blank', class: 'link-button' do %>
-          <strong><%= link.title %></strong>
-          <p><%= link.description %></p>
-        <% end %>
+        <% safe_url = link.url =~ URI::DEFAULT_PARSER.make_regexp ? link.url : "http://#{ERB::Util.h(link.url)}" %>
+        <%= link_to ERB::Util.h(link.title), safe_url, target: "_blank", class: "link-button" %>
       </li>
-    <% end %>
+      <% end %>
   </ul>
 
 
 <%= link_to 'New Link', new_link_path, class: 'new-link-button' %>
-
