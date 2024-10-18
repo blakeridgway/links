@@ -13,8 +13,8 @@
   <ul>
     <% @links.each do |link| %>
       <li>
-        <% safe_url = link.url.presence && URI.parse(link.url).scheme ? link.url : "http://#{ERB::Util.h(link.url)}" %>
-        <%= link_to link.title, safe_url, target: "_blank", class: "link-button" %>
+        <% safe_url = link.url =~ URI::DEFAULT_PARSER.make_regexp ? link.url : "http://#{ERB::Util.h(link.url)}" %>
+        <%= link_to ERB::Util.h(link.title), safe_url, target: "_blank", class: "link-button" %>
       </li>
       <% end %>
   </ul>
