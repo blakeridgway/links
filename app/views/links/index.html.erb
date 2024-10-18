@@ -13,15 +13,11 @@
   <ul>
     <% @links.each do |link| %>
       <li>
-          <% safe_url = URI.parse(Link.new.url).scheme ? Link.new.url : "http://#{Link.new.url}" %>
-          <%= link_to safe_url, safe_url, target: "_blank", class: "link-button" %>
-          <strong><%= link.title %></strong>
-          <p><%= link.description %></p>
-        <% end %>
+          <% safe_url = link.url.presence && URI.parse(link.url).scheme ? link.url : "http://#{link.url}" %>
+          <%= link_to link.title, safe_url, target: "_blank", class: "link-button" %>
       </li>
-    <% end %>
+      <% end %>
   </ul>
 
 
 <%= link_to 'New Link', new_link_path, class: 'new-link-button' %>
-
